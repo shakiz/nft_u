@@ -1,4 +1,4 @@
-package com.digital.nftu.ui.home
+package com.digital.nftu.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

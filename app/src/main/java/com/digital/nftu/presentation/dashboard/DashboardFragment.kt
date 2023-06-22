@@ -1,4 +1,4 @@
-package com.digital.nftu.ui.dashboard
+package com.digital.nftu.presentation.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
