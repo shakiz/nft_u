@@ -1,9 +1,10 @@
 package com.digital.nftu.data.repository
 
 import com.digital.nftu.data.response.NFTItem
+import com.digital.nftu.data.source.remote.RemoteSource
 
-class NFTRepositoryImpl : NFTRepository{
+class NFTRepositoryImpl(val remoteSource: RemoteSource) : NFTRepository{
     override suspend fun fetchNFTItems(): List<NFTItem> {
-        TODO("Not yet implemented")
+        return remoteSource.getNFTItemList()
     }
 }
