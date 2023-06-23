@@ -1,4 +1,4 @@
-package com.digital.nftu
+package com.digital.nftu.presentation
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.digital.nftu.R
 import com.digital.nftu.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
