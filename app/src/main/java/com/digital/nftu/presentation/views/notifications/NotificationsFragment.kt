@@ -1,4 +1,4 @@
-package com.digital.nftu.presentation.notifications
+package com.digital.nftu.presentation.views.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

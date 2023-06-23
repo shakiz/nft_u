@@ -1,4 +1,4 @@
-package com.digital.nftu.presentation
+package com.digital.nftu.presentation.views
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
