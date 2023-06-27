@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NFTU" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.NFTU" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,4 +13,25 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="WhiteToolbarBarStyle" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textAppearance">@style/BoldTextStyle</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="titleTextAppearance">@style/BoldTextStyle</item>
+        <item name="titleTextColor">@color/black</item>
+    </style>
+
+    <style name="BoldTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ToolbarTitleTextStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
