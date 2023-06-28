@@ -72,7 +72,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun initObserver(){
-
+        viewModel.onCategoryItemsUpdated().observe(viewLifecycleOwner){
+            categories ->
+        }
     }
 
     override fun onDestroyView() {
