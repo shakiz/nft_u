@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.digital.nftu.data.repository.NFTRepository
-import com.digital.nftu.data.response.NFTItem
+import com.digital.nftu.data.response.remote.NFTItem
 import kotlinx.coroutines.launch
 
 class NFTViewModel(private val nftRepository: NFTRepository) :
