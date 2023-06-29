@@ -7,9 +7,13 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.digital.nftu.R
 import com.digital.nftu.databinding.FragmentHomeBinding
+import com.digital.nftu.presentation.adapter.CategoryAdapter
 import com.digital.nftu.presentation.views.MainActivity
+import com.digital.nftu.utils.SpaceItemDecoration
 
 class HomeFragment : Fragment() {
 
@@ -17,6 +21,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var viewModel: HomeViewModel
+    private var categoryAdapter = CategoryAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +44,7 @@ class HomeFragment : Fragment() {
 
         setupToolbar()
         prepareToolbarMenus()
+        setUpCategoryRecyclerView()
         initObserver()
         viewModel.fetchCategoryItems()
     }
@@ -73,8 +79,14 @@ class HomeFragment : Fragment() {
 
     private fun initObserver(){
         viewModel.onCategoryItemsUpdated().observe(viewLifecycleOwner){
-            categories ->
+            categories -> categoryAdapter.setCategoryItems(categories)
         }
+    }
+
+    private fun setUpCategoryRecyclerView(){
+        binding.rvCategory.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        binding.rvCategory.addItemDecoration(SpaceItemDecoration(12, false))
+        binding.rvCategory.adapter = categoryAdapter
     }
 
     override fun onDestroyView() {

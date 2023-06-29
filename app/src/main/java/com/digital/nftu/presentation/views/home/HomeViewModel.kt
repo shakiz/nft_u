@@ -12,13 +12,13 @@ class HomeViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-    private val categories = MutableLiveData<List<Category>>()
+    private val categories = MutableLiveData<ArrayList<Category>>()
 
-    fun onCategoryItemsUpdated() : LiveData<List<Category>> = categories
+    fun onCategoryItemsUpdated() : LiveData<ArrayList<Category>> = categories
 
     fun fetchCategoryItems(){
         categories.postValue(
-            listOf(
+            arrayListOf(
                 Category(isSelected = true, title = "All"),
                 Category(isSelected = false, title = "Gaming"),
                 Category(isSelected = false, title = "Sports"),
