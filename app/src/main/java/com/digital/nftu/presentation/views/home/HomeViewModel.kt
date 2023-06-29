@@ -6,12 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.digital.nftu.data.response.local.Category
 
 class HomeViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
-
     private val categories = MutableLiveData<ArrayList<Category>>()
 
     fun onCategoryItemsUpdated() : LiveData<ArrayList<Category>> = categories
@@ -24,6 +18,8 @@ class HomeViewModel : ViewModel() {
                 Category(isSelected = false, title = "Sports"),
                 Category(isSelected = false, title = "Music"),
                 Category(isSelected = false, title = "Arcade"),
+                Category(isSelected = false, title = "Sports"),
+                Category(isSelected = false, title = "Portfolio"),
             )
         )
     }

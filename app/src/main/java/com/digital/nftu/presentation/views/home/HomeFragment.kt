@@ -85,7 +85,7 @@ class HomeFragment : Fragment() {
 
     private fun setUpCategoryRecyclerView(){
         binding.rvCategory.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-        binding.rvCategory.addItemDecoration(SpaceItemDecoration(12, false))
+        binding.rvCategory.addItemDecoration(SpaceItemDecoration(32, false))
         binding.rvCategory.adapter = categoryAdapter
     }
 
