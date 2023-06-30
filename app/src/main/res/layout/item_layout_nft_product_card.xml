@@ -21,18 +21,19 @@
     
     <ImageView
         android:id="@+id/ivFavorite"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_heart_icon"
+
         android:padding="8dp"
         android:background="@drawable/circle_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/tvCategory"
+        android:id="@+id/tvUserName"
         style="@style/ToolbarTitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +56,7 @@
         tools:text="Owned by KevGenki"
         android:textColor="@color/textColorAccent"
         android:textSize="11sp"
-        app:layout_constraintTop_toBottomOf="@id/tvCategory"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/tvEth"/>
 
@@ -70,7 +71,7 @@
         tools:text="5029 ETH"
         android:textColor="@color/textColorAccent"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvCategory"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvOwnedBy"/>
 
