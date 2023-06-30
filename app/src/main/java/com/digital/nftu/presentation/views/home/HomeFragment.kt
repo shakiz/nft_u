@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.digital.nftu.R
 import com.digital.nftu.databinding.FragmentHomeBinding
 import com.digital.nftu.presentation.adapter.CategoryAdapter
+import com.digital.nftu.presentation.adapter.NFTProductAdapter
 import com.digital.nftu.presentation.views.MainActivity
 import com.digital.nftu.utils.SpaceItemDecoration
 
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private var categoryAdapter = CategoryAdapter()
+    private var nftAdapter = NFTProductAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,11 +44,17 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initViews()
+        initObserver()
+        viewModel.fetchCategoryItems()
+        viewModel.fetchNftItems()
+    }
+
+    private fun initViews(){
         setupToolbar()
         prepareToolbarMenus()
         setUpCategoryRecyclerView()
-        initObserver()
-        viewModel.fetchCategoryItems()
+        setUpNFTRecyclerView()
     }
 
     private fun setupToolbar(){
@@ -81,12 +89,22 @@ class HomeFragment : Fragment() {
         viewModel.onCategoryItemsUpdated().observe(viewLifecycleOwner){
             categories -> categoryAdapter.setCategoryItems(categories)
         }
+
+        viewModel.onNftItemsUpdated().observe(viewLifecycleOwner){
+                nftItems -> nftAdapter.setNFTItems(nftItems)
+        }
     }
 
     private fun setUpCategoryRecyclerView(){
         binding.rvCategory.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         binding.rvCategory.addItemDecoration(SpaceItemDecoration(32, false))
         binding.rvCategory.adapter = categoryAdapter
+    }
+
+    private fun setUpNFTRecyclerView(){
+        binding.rvNftProduct.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+        binding.rvNftProduct.addItemDecoration(SpaceItemDecoration(32, false))
+        binding.rvNftProduct.adapter = nftAdapter
     }
 
     override fun onDestroyView() {
