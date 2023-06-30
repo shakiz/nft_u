@@ -97,4 +97,51 @@
         tools:itemCount="4"
         tools:listitem="@layout/item_layout_nft_product_card"/>
 
+    <TextView
+        android:id="@+id/tvTopCollectionHeading"
+        style="@style/ToolbarTitleTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/top_collections"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvSeeAllCollection"
+        app:layout_constraintTop_toBottomOf="@id/rvNftProduct"/>
+
+    <TextView
+        android:id="@+id/tvSeeAllCollection"
+        style="@style/ToolbarTitleTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="@string/see_all"
+        android:textColor="@color/seeAllColor"
+        android:textSize="12sp"
+        android:gravity="end|center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTopCollectionHeading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvTopCollectionHeading"
+        app:layout_constraintTop_toBottomOf="@id/rvNftProduct" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAllNftProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSeeAllCollection"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_layout_nft_product_card_small"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

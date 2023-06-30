@@ -11,4 +11,5 @@
     <color name="bottomNavBg">#e7e7e7</color>
     <color name="etBgColor">#FAFAFA</color>
     <color name="textColorAccent">#222222</color>
+    <color name="seeAllColor">#65655D</color>
 </resources>
