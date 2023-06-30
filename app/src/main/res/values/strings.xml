@@ -7,4 +7,6 @@
     <string name="title_wallet">Wallet</string>
     <string name="hint_search">Search for collection, item..</string>
     <string name="categories">Categories</string>
+    <string name="top_collections">Top Collections</string>
+    <string name="see_all">See All</string>
 </resources>
