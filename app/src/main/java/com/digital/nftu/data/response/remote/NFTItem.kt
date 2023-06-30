@@ -15,4 +15,6 @@ data class NFTItem(
     val exchangeRate: String? = null,
     val currency: String? = null,
     val isFavorite: Boolean? = null,
+    val itemBannerUrl: String? = null,
+    val itemBannerImage: Int? = null,
 )
