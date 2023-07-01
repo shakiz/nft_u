@@ -13,6 +13,7 @@ import com.digital.nftu.R
 import com.digital.nftu.databinding.FragmentHomeBinding
 import com.digital.nftu.presentation.adapter.CategoryAdapter
 import com.digital.nftu.presentation.adapter.NFTProductAdapter
+import com.digital.nftu.presentation.adapter.TopNFTProductAdapter
 import com.digital.nftu.presentation.views.MainActivity
 import com.digital.nftu.utils.SpaceItemDecoration
 
@@ -24,6 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var viewModel: HomeViewModel
     private var categoryAdapter = CategoryAdapter()
     private var nftAdapter = NFTProductAdapter()
+    private var topNftAdapter = TopNFTProductAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,7 @@ class HomeFragment : Fragment() {
         initObserver()
         viewModel.fetchCategoryItems()
         viewModel.fetchNftItems()
+        viewModel.fetchTopNftItems()
     }
 
     private fun initViews(){
@@ -55,6 +58,7 @@ class HomeFragment : Fragment() {
         prepareToolbarMenus()
         setUpCategoryRecyclerView()
         setUpNFTRecyclerView()
+        setUpPopularNftProductRecyclerView()
     }
 
     private fun setupToolbar(){
@@ -93,6 +97,10 @@ class HomeFragment : Fragment() {
         viewModel.onNftItemsUpdated().observe(viewLifecycleOwner){
                 nftItems -> nftAdapter.setNFTItems(nftItems)
         }
+
+        viewModel.onTopNftProductsUpdated().observe(viewLifecycleOwner){
+                nftItems -> topNftAdapter.setNFTItems(nftItems)
+        }
     }
 
     private fun setUpCategoryRecyclerView(){
@@ -105,6 +113,12 @@ class HomeFragment : Fragment() {
         binding.rvNftProduct.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         binding.rvNftProduct.addItemDecoration(SpaceItemDecoration(32, false))
         binding.rvNftProduct.adapter = nftAdapter
+    }
+
+    private fun setUpPopularNftProductRecyclerView(){
+        binding.rvAllNftProduct.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.rvAllNftProduct.addItemDecoration(SpaceItemDecoration(32, false))
+        binding.rvAllNftProduct.adapter = topNftAdapter
     }
 
     override fun onDestroyView() {

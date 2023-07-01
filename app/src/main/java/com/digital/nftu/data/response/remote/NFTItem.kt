@@ -10,6 +10,7 @@ data class NFTItem(
     val bidEndTime: String? = null,
     val category: String? = null,
     val description: String? = null,
+    val fullName: String? = null,
     val userName: String? = null,
     val increasedBy: String? = null,
     val exchangeRate: String? = null,

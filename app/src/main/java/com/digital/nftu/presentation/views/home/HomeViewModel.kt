@@ -10,10 +10,13 @@ import com.digital.nftu.data.response.remote.NFTItem
 class HomeViewModel : ViewModel() {
     private val categories = MutableLiveData<ArrayList<Category>>()
     private val nftProducts = MutableLiveData<ArrayList<NFTItem>>()
+    private val topNftProducts = MutableLiveData<ArrayList<NFTItem>>()
 
     fun onCategoryItemsUpdated() : LiveData<ArrayList<Category>> = categories
 
     fun onNftItemsUpdated() : LiveData<ArrayList<NFTItem>> = nftProducts
+
+    fun onTopNftProductsUpdated() : LiveData<ArrayList<NFTItem>> = topNftProducts
 
     fun fetchCategoryItems(){
         categories.postValue(
@@ -52,6 +55,34 @@ class HomeViewModel : ViewModel() {
                     exchangeRate = "2,299 ETH",
                     itemBannerImage = R.drawable.nft_product_3,
                     userName = "Pansi74"
+                ),
+            )
+        )
+    }
+
+    fun fetchTopNftItems(){
+        nftProducts.postValue(
+            arrayListOf(
+                NFTItem(
+                    fullName = "Monika Jova",
+                    userName = "monika",
+                    itemBannerImage = R.drawable.small_product_1,
+                    exchangeRate = "3,089",
+                    increasedBy = "+58.00%"
+                ),
+                NFTItem(
+                    fullName = "Synthia Asia",
+                    userName = "Synthi",
+                    itemBannerImage = R.drawable.small_product_2,
+                    exchangeRate = "1,189",
+                    increasedBy = "+58.00%"
+                ),
+                NFTItem(
+                    fullName = "Alan Joy",
+                    userName = "joy",
+                    itemBannerImage = R.drawable.small_product_3,
+                    exchangeRate = "4,989",
+                    increasedBy = "+58.00%"
                 ),
             )
         )
