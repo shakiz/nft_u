@@ -61,25 +61,25 @@ class HomeViewModel : ViewModel() {
     }
 
     fun fetchTopNftItems(){
-        nftProducts.postValue(
+        topNftProducts.postValue(
             arrayListOf(
                 NFTItem(
                     fullName = "Monika Jova",
-                    userName = "monika",
+                    userName = "@monika",
                     itemBannerImage = R.drawable.small_product_1,
                     exchangeRate = "3,089",
                     increasedBy = "+58.00%"
                 ),
                 NFTItem(
                     fullName = "Synthia Asia",
-                    userName = "Synthi",
+                    userName = "@Synthi",
                     itemBannerImage = R.drawable.small_product_2,
                     exchangeRate = "1,189",
                     increasedBy = "+58.00%"
                 ),
                 NFTItem(
                     fullName = "Alan Joy",
-                    userName = "joy",
+                    userName = "@joy",
                     itemBannerImage = R.drawable.small_product_3,
                     exchangeRate = "4,989",
                     increasedBy = "+58.00%"

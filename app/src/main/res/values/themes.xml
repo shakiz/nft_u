@@ -36,7 +36,7 @@
 
     <style name="CornerCut" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">6   dp</item>
+        <item name="cornerSize">6dp</item>
     </style>
 
 </resources>
