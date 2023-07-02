@@ -9,4 +9,6 @@
     <string name="categories">Categories</string>
     <string name="top_collections">Top Collections</string>
     <string name="see_all">See All</string>
+    <string name="explore">Explore</string>
+    <string name="upload">Upload</string>
 </resources>

@@ -9,15 +9,26 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard"
+        android:id="@+id/navigation_explore"
+        android:icon="@drawable/ic_explore"
+        app:showAsAction="always"
+        android:title="@string/explore" />
+
+    <item
+        android:id="@+id/navigation_upload"
+        android:icon="@drawable/ic_upload"
+        app:showAsAction="always"
+        android:title="@string/upload" />
+
+    <item
+        android:id="@+id/navigation_stats"
+        android:icon="@drawable/ic_stats"
         app:showAsAction="always"
         android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notification"
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_dashboard"
         app:showAsAction="always"
-        android:title="@string/title_notifications" />
-
+        android:title="@string/title_dashboard" />
 </menu>
