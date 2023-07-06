@@ -29,22 +29,12 @@
                 app:navigationIcon="@drawable/ic_arrow_back"
                 app:contentInsetStart="16dp"
                 app:contentInsetEnd="16dp"
+                app:title="@string/view_art"
+                app:titleCentered="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:titleTextAppearance="@style/ToolbarTitleTextStyle">
-
-                <TextView
-                    android:id="@+id/title"
-                    style="@style/ToolbarTitleTextStyle"
-                    android:layout_marginStart="12dp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/view_art" />
-
-            </com.google.android.material.appbar.MaterialToolbar>
+                app:titleTextAppearance="@style/ToolbarTitleTextStyle"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,9 +7,11 @@ import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.digital.nftu.R
+import com.digital.nftu.data.response.remote.NFTItem
 import com.digital.nftu.databinding.FragmentHomeBinding
 import com.digital.nftu.presentation.adapter.CategoryAdapter
 import com.digital.nftu.presentation.adapter.NFTProductAdapter
@@ -17,7 +19,7 @@ import com.digital.nftu.presentation.adapter.TopNFTProductAdapter
 import com.digital.nftu.presentation.views.MainActivity
 import com.digital.nftu.utils.SpaceItemDecoration
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), NFTProductAdapter.OnNftItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -112,6 +114,7 @@ class HomeFragment : Fragment() {
         binding.rvNftProduct.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         binding.rvNftProduct.addItemDecoration(SpaceItemDecoration(32, false))
         binding.rvNftProduct.adapter = nftAdapter
+        nftAdapter.setOnItemClicked(this)
     }
 
     private fun setUpPopularNftProductRecyclerView(){
@@ -123,5 +126,9 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClicked(nftItem: NFTItem) {
+        findNavController().navigate(R.id.navigation_product_details)
     }
 }

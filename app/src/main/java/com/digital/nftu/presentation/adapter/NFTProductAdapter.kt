@@ -12,8 +12,12 @@ import com.digital.nftu.utils.orZero
 class NFTProductAdapter: RecyclerView.Adapter<NFTProductAdapter.NFTProductViewHolder>() {
 
     private var itemList = ArrayList<NFTItem>()
+    private var onItemClickListener: OnNftItemClickListener? = null
 
-    class NFTProductViewHolder(private val binding: ItemLayoutNftProductCardBinding) : RecyclerView.ViewHolder(binding.root) {
+    class NFTProductViewHolder(
+        private val binding: ItemLayoutNftProductCardBinding,
+        private val onItemClickListener: OnNftItemClickListener?
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(nftItem: NFTItem){
             binding.ivProductImage.setImageResource(nftItem.itemBannerImage.orZero())
             binding.tvUserName.text = nftItem.userName
@@ -25,12 +29,16 @@ class NFTProductAdapter: RecyclerView.Adapter<NFTProductAdapter.NFTProductViewHo
             } else {
                 binding.ivFavorite.setImageResource(R.drawable.ic_heart_icon)
             }
+
+            itemView.setOnClickListener {
+                onItemClickListener?.onItemClicked(nftItem)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NFTProductViewHolder {
         val binding = ItemLayoutNftProductCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return NFTProductViewHolder(binding)
+        return NFTProductViewHolder(binding, onItemClickListener)
     }
 
     override fun getItemCount(): Int {
@@ -44,5 +52,13 @@ class NFTProductAdapter: RecyclerView.Adapter<NFTProductAdapter.NFTProductViewHo
     fun setNFTItems(items: ArrayList<NFTItem>){
         itemList.addAll(items)
         notifyDataSetChanged()
+    }
+
+    fun setOnItemClicked(onItemClickListener: OnNftItemClickListener? = null){
+        this.onItemClickListener = onItemClickListener
+    }
+
+    interface OnNftItemClickListener{
+        fun onItemClicked(nftItem: NFTItem)
     }
 }
