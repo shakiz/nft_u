@@ -12,4 +12,8 @@
     <string name="explore">Explore</string>
     <string name="upload">Upload</string>
     <string name="view_art">View Art</string>
+    <string name="art">Art</string>
+    <string name="maleficent_135">Maleficent #135</string>
+    <string name="description">Description</string>
+    <string name="sample_description">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt.</string>
 </resources>
