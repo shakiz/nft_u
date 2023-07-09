@@ -16,4 +16,12 @@
     <string name="maleficent_135">Maleficent #135</string>
     <string name="description">Description</string>
     <string name="sample_description">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt.</string>
+    <string name="sample_bid_1">2.00 $</string>
+    <string name="sample_user_1">Avril15</string>
+    <string name="sample_bid_2">3.40 $</string>
+    <string name="sample_user_2">Pansi74</string>
+    <string name="current_bid">Current Bid</string>
+    <string name="current_bid_amount">50.29 ETH</string>
+    <string name="ending_in">Ending In</string>
+    <string name="sample_bid_ending_time">22:56:23</string>
 </resources>
