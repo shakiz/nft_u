@@ -24,4 +24,6 @@
     <string name="current_bid_amount">50.29 ETH</string>
     <string name="ending_in">Ending In</string>
     <string name="sample_bid_ending_time">22:56:23</string>
+    <string name="highest_bid">Highest Bid</string>
+    <string name="place_bid">Place Bid</string>
 </resources>

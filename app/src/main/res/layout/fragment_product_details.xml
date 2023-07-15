@@ -17,7 +17,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="48dp"
             tools:context=".presentation.views.home.HomeFragment">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -266,6 +265,82 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvBottomBiddingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="16dp"
+                app:shapeAppearance="@style/ShapeAppearanceTopRound"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/bottomNavBg"
+                app:cardUseCompatPadding="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+
+                    <ImageView
+                        android:id="@+id/tvHighestBidUser"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:src="@drawable/small_product_3"/>
+
+                    <TextView
+                        android:id="@+id/tvHighestBidHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/highest_bid"
+                        app:layout_constraintBottom_toTopOf="@id/tvHighestBid"
+                        app:layout_constraintStart_toEndOf="@id/tvHighestBidUser"
+                        app:layout_constraintTop_toTopOf="@+id/tvHighestBidUser" />
+
+                    <TextView
+                        android:id="@+id/tvHighestBid"
+                        style="@style/ToolbarTitleTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/current_bid_amount"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvHighestBidUser"
+                        app:layout_constraintStart_toEndOf="@id/tvHighestBidUser"
+                        app:layout_constraintTop_toBottomOf="@id/tvHighestBidHeading" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textStyle="bold"
+                        app:strokeColor="@color/black"
+                        android:stateListAnimator="@null"
+                        android:textSize="12sp"
+                        app:cornerRadius="4dp"
+                        android:elevation="0dp"
+                        app:elevation="0dp"
+                        android:text="@string/place_bid"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvHighestBidUser"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvHighestBidUser"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
