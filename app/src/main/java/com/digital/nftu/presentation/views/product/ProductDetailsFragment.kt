@@ -18,6 +18,7 @@ class ProductDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (context as MainActivity).setBottomNavigationBarVisibility(false)
     }
 
     override fun onCreateView(
@@ -53,5 +54,10 @@ class ProductDetailsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        (requireActivity() as MainActivity).setBottomNavigationBarVisibility(true)
     }
 }
