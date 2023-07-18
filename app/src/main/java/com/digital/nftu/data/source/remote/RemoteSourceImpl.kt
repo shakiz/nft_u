@@ -1,4 +1,4 @@
-package com.digital.nftu.data.sourceimpl.remote
+package com.digital.nftu.data.source.remote
 
 import com.digital.nftu.data.response.remote.NFTItem
 import com.digital.nftu.data.source.NFTApi
