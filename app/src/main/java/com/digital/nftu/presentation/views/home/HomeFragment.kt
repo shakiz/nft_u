@@ -19,7 +19,7 @@ import com.digital.nftu.presentation.adapter.TopNFTProductAdapter
 import com.digital.nftu.presentation.views.MainActivity
 import com.digital.nftu.utils.SpaceItemDecoration
 
-class HomeFragment : Fragment(), NFTProductAdapter.OnNftItemClickListener {
+class HomeFragment : Fragment(), NFTProductAdapter.OnNftItemClickListener, TopNFTProductAdapter.OnUserDetailsClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -59,7 +59,7 @@ class HomeFragment : Fragment(), NFTProductAdapter.OnNftItemClickListener {
         prepareToolbarMenus()
         setUpCategoryRecyclerView()
         setUpNFTRecyclerView()
-        setUpPopularNftProductRecyclerView()
+        setUpPopularUserNftProductRecyclerView()
     }
 
     private fun setupToolbar(){
@@ -117,10 +117,11 @@ class HomeFragment : Fragment(), NFTProductAdapter.OnNftItemClickListener {
         nftAdapter.setOnItemClicked(this)
     }
 
-    private fun setUpPopularNftProductRecyclerView(){
-        binding.rvAllNftProduct.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        binding.rvAllNftProduct.addItemDecoration(SpaceItemDecoration(32, false))
-        binding.rvAllNftProduct.adapter = topNftAdapter
+    private fun setUpPopularUserNftProductRecyclerView(){
+        binding.rvUserWithNftProduct.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.rvUserWithNftProduct.addItemDecoration(SpaceItemDecoration(32, false))
+        binding.rvUserWithNftProduct.adapter = topNftAdapter
+        topNftAdapter.setItemClickListener(this)
     }
 
     override fun onDestroyView() {
@@ -130,5 +131,9 @@ class HomeFragment : Fragment(), NFTProductAdapter.OnNftItemClickListener {
 
     override fun onItemClicked(nftItem: NFTItem) {
         findNavController().navigate(R.id.navigation_product_details)
+    }
+
+    override fun onUserDetails(user: NFTItem) {
+        findNavController().navigate(R.id.navigation_user_details)
     }
 }
