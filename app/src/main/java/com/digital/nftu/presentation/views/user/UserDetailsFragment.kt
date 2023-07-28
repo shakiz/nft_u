@@ -48,6 +48,7 @@ class UserDetailsFragment : Fragment() {
 
     private fun setupToolbar(){
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
+        binding.toolbar.title = ""
     }
 
     private fun initObserver(){
