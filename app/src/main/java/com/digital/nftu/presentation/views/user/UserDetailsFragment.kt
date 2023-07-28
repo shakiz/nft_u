@@ -1,11 +1,13 @@
 package com.digital.nftu.presentation.views.user
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import com.digital.nftu.R
 import com.digital.nftu.databinding.FragmentUserDetailsBinding
 import com.digital.nftu.presentation.views.MainActivity
 
@@ -41,6 +43,7 @@ class UserDetailsFragment : Fragment() {
 
     private fun initViews(){
         setupToolbar()
+        prepareToolbarMenus()
     }
 
     private fun setupToolbar(){
@@ -49,6 +52,27 @@ class UserDetailsFragment : Fragment() {
 
     private fun initObserver(){
 
+    }
+
+    private fun prepareToolbarMenus() {
+        (requireActivity() as MenuHost).addMenuProvider(object : MenuProvider {
+            override fun onPrepareMenu(menu: Menu) {
+                super.onPrepareMenu(menu)
+            }
+
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.user_details_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when(menuItem.itemId){
+                    R.id.navigation_more -> {
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     override fun onDestroyView() {
