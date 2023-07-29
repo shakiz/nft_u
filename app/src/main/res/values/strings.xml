@@ -27,4 +27,12 @@
     <string name="highest_bid">Highest Bid</string>
     <string name="place_bid">Place Bid</string>
     <string name="follow">Follow</string>
+    <string name="nft_no_sample">258</string>
+    <string name="items">Items</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="created">Created</string>
+    <string name="nft_followers_sample">1.2k</string>
+    <string name="total_following_sample_no">160</string>
+    <string name="total_created_sample_no">1k</string>
 </resources>

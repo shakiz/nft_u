@@ -97,7 +97,7 @@
                 app:layout_constraintBottom_toTopOf="@id/tvUserName"
                 app:layout_constraintStart_toEndOf="@id/ivUserIcon"
                 app:layout_constraintTop_toTopOf="@id/ivUserIcon"
-                android:text="Monika Joba" />
+                android:text="@string/sample_user_2" />
 
             <TextView
                 android:id="@+id/tvUserName"
@@ -108,10 +108,11 @@
                 android:textColor="@color/textColorAccent"
                 android:textSize="12sp"
                 android:includeFontPadding="false"
+                android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="@id/ivUserIcon"
                 app:layout_constraintStart_toEndOf="@id/ivUserIcon"
                 app:layout_constraintTop_toBottomOf="@id/tvFullName"
-                android:text="monika" />
+                android:text="@string/sample_user_1" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFollow"
@@ -148,6 +149,122 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivUserIcon"
                 android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:id="@+id/totalNftItems"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/nft_no_sample"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/totalNftItemsHeading"
+                app:layout_constraintStart_toStartOf="@+id/totalNftItemsHeading"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+            <TextView
+                android:id="@+id/totalNftItemsHeading"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/items"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/totalNftItems"
+                app:layout_constraintEnd_toStartOf="@id/totalFollowersHeading"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:id="@+id/totalFollowers"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/nft_followers_sample"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/totalFollowersHeading"
+                app:layout_constraintStart_toStartOf="@+id/totalFollowersHeading"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+            <TextView
+                android:id="@+id/totalFollowersHeading"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/followers"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/totalNftItemsHeading"
+                app:layout_constraintTop_toBottomOf="@id/totalFollowers"
+                app:layout_constraintEnd_toStartOf="@id/totalFollowingHeading"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:id="@+id/totalFollowing"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/total_following_sample_no"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/totalFollowingHeading"
+                app:layout_constraintStart_toStartOf="@+id/totalFollowingHeading"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+            <TextView
+                android:id="@+id/totalFollowingHeading"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/following"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/totalFollowersHeading"
+                app:layout_constraintTop_toBottomOf="@id/totalFollowing"
+                app:layout_constraintEnd_toStartOf="@id/totalItemCreatedHeading"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:id="@+id/totalItemCreated"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/total_created_sample_no"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/totalItemCreatedHeading"
+                app:layout_constraintStart_toStartOf="@+id/totalItemCreatedHeading"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+            <TextView
+                android:id="@+id/totalItemCreatedHeading"
+                style="@style/NormalTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/created"
+                android:textSize="12sp"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/totalFollowingHeading"
+                app:layout_constraintTop_toBottomOf="@id/totalItemCreated"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"/>
 
