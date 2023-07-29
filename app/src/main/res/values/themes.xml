@@ -49,4 +49,8 @@
         <item name="cornerSizeTopRight">16dp</item>
     </style>
 
+    <style name="ShapeAppearanceRound" parent="">
+        <item name="cornerSize">6dp</item>
+    </style>
+
 </resources>
